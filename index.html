@@ -201,15 +201,6 @@
 
     
     
-      
-      
-        
-        
-        
-      
-
-      
-    
 
     
       
@@ -234,7 +225,7 @@
               
                 
                 <a class="post-title-link" href="/2016/01/27/scala-cookbook-Chapter-6-Object/" itemprop="url">
-                  scala cookbook notes
+                  scala cookbook Chapter 6 Object
                 </a>
               
             
@@ -252,6 +243,25 @@
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/scala/" itemprop="url" rel="index">
+                    <span itemprop="name">scala</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -287,50 +297,12 @@
 <p>scala does not have a static keyword, so if you want to create a class that has static methods, you can use companion objects.Like this: Define nonstatic (instance) members in your class, and define members that you want to appear as “static” members in an object that has the same name as the class, and is in the same file as the class.</p>
 <figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Pizza class</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pizza</span> (</span><span class="keyword">var</span> crustType: <span class="type">String</span>) &#123;</span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">toString</span> =</span> <span class="string">"Crust type is "</span> + crustType</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// companion object</span></span><br><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">Pizza</span> &#123;</span></span><br><span class="line">  <span class="keyword">val</span> <span class="type">CRUST_TYPE_THIN</span> = <span class="string">"thin"</span></span><br><span class="line">  <span class="keyword">val</span> <span class="type">CRUST_TYPE_THICK</span> = <span class="string">"thick"</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">getFoo</span> =</span> <span class="string">"Foo"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//how to use</span></span><br><span class="line">println(<span class="type">Pizza</span>.<span class="type">CRUST_TYPE_THIN</span>)</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> <span class="type">Pizza</span>(<span class="type">Pizza</span>.<span class="type">CRUST_TYPE_THICK</span>)</span><br><span class="line">println(p)</span><br></pre></td></tr></table></figure>
 <p>Inorder to don’t use the new keyword to create a new instance of a class, there are two ways:<br>• Create a companion object for your class, and define an apply method in the companion<br>object with the desired constructor signature.<br>• Define your class as a case class</p>
-<pre><code class="scala"><span class="comment">//companion object</span>
-<span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>{
-  <span class="keyword">var</span> name: <span class="type">String</span> = _
-}
-<span class="type">Object</span> <span class="type">Persion</span> {
-  <span class="function"><span class="keyword">def</span> <span class="title">apply</span></span>(name: <span class="type">String</span>): <span class="type">Person</span> = {
-    <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="type">Person</span>
-    p.name = name
-  }
-}
-<span class="comment">//use</span>
-<span class="keyword">val</span> dawn = <span class="type">Person</span>(<span class="string">"Dawn"</span>)
-<span class="keyword">val</span> a = <span class="type">Array</span>(<span class="type">Person</span>(<span class="string">"Dan"</span>), <span class="type">Person</span>(<span class="string">"Eli"</span>))
-
-<span class="comment">//case class</span>
-<span class="keyword">case</span> <span class="type">Person</span>(name: <span class="type">String</span>)
-<span class="keyword">val</span> john = <span class="type">Person</span>(<span class="string">"John"</span>)
-</code></pre>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//companion object</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>&#123;</span></span><br><span class="line">  <span class="keyword">var</span> name: <span class="type">String</span> = _</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">Object</span> <span class="type">Persion</span> &#123;</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">apply</span>(</span>name: <span class="type">String</span>): <span class="type">Person</span> = &#123;</span><br><span class="line">    <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="type">Person</span></span><br><span class="line">    p.name = name</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//use</span></span><br><span class="line"><span class="keyword">val</span> dawn = <span class="type">Person</span>(<span class="string">"Dawn"</span>)</span><br><span class="line"><span class="keyword">val</span> a = <span class="type">Array</span>(<span class="type">Person</span>(<span class="string">"Dan"</span>), <span class="type">Person</span>(<span class="string">"Eli"</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">//case class</span></span><br><span class="line"><span class="keyword">case</span> <span class="type">Person</span>(name: <span class="type">String</span>)</span><br><span class="line"><span class="keyword">val</span> john = <span class="type">Person</span>(<span class="string">"John"</span>)</span><br></pre></td></tr></table></figure>
 <p>note:<br>(1) apply method is a syntactic sugar, “val p = Person(“hi”)” == “val p = Person.apply(“hi”)”<br>(2) with case classes, the case class generates an apply method in a companion object default.<br>(3) you can provid multiple apply methods in companion object match multiple constructors in class</p>
-<p>Factory Method<br>you can implement the factory method with apply For instance, suppose you want to create an Animal factory that returns instances of Cat and Dog classes, based on what you ask for. By writing an apply method in the companion object of an Animal class, users of your factory can create new Cat and Dog instances like this:</p>
-<pre><code class="scala"><span class="keyword">val</span> cat = <span class="type">Animal</span>(<span class="string">"cat"</span>) <span class="comment">// creates a Cat</span>
-<span class="keyword">val</span> dog = <span class="type">Animal</span>(<span class="string">"dog"</span>) <span class="comment">// creates a Dog</span>
-</code></pre>
-<p>To implement this behavior, create a parent Animal trait:</p>
-<pre><code class="scala"><span class="class"><span class="keyword">trait</span> <span class="title">Animal</span> </span>{
-  <span class="function"><span class="keyword">def</span> <span class="title">speak</span></span>
-}
-</code></pre>
+<p>Factory Method<br>you can implement the factory method with apply For instance, suppose you want to create an Animal factory that returns instances of Cat and Dog classes, based on what you ask for. By writing an apply method in the companion object of an Animal class, users of your factory can create new Cat and Dog instances like this:<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> cat = <span class="type">Animal</span>(<span class="string">"cat"</span>) <span class="comment">// creates a Cat</span></span><br><span class="line"><span class="keyword">val</span> dog = <span class="type">Animal</span>(<span class="string">"dog"</span>) <span class="comment">// creates a Dog</span></span><br></pre></td></tr></table></figure></p>
+<p>To implement this behavior, create a parent Animal trait:<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Animal</span> &#123;</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">speak</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure></p>
 <p>In the same file, create (a) a companion object, (b) the classes that extend the base trait, and (c) a suitable apply method:</p>
-<pre><code class="scala"><span class="class"><span class="keyword">object</span> <span class="title">Animal</span> </span>{
-  <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>{
-  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">speak</span> </span>{ println(<span class="string">"woof"</span>) }
-}
-<span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>{
-  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">speak</span> </span>{ println(<span class="string">"meow"</span>) }
-}
-<span class="comment">// the factory method</span>
-<span class="function"><span class="keyword">def</span> <span class="title">apply</span></span>(s: <span class="type">String</span>): <span class="type">Animal</span> = {
-  <span class="keyword">if</span> (s == <span class="string">"dog"</span>) <span class="keyword">new</span> <span class="type">Dog</span>
-  <span class="keyword">else</span> <span class="keyword">new</span> <span class="type">Cat</span>
-}
-}
-</code></pre>
-
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">Animal</span> &#123;</span></span><br><span class="line">  <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">Animal</span> &#123;</span></span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">speak</span> &#123;</span> println(<span class="string">"woof"</span>) &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">Animal</span> &#123;</span></span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">speak</span> &#123;</span> println(<span class="string">"meow"</span>) &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// the factory method</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">apply</span>(</span>s: <span class="type">String</span>): <span class="type">Animal</span> = &#123;</span><br><span class="line">  <span class="keyword">if</span> (s == <span class="string">"dog"</span>) <span class="keyword">new</span> <span class="type">Dog</span></span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">new</span> <span class="type">Cat</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -390,6 +362,25 @@
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/scala/" itemprop="url" rel="index">
+                    <span itemprop="name">scala</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -741,7 +732,7 @@
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">分類</span>
               </a>
           </div>
