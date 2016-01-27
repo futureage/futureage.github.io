@@ -2,18 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/01/27/scala-cookbook-Chapter-6-Object/</loc>
+    <lastmod>2016-01-27T10:29:38.978Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/01/27/scala-notes/</loc>
+    <lastmod>2016-01-27T09:52:26.821Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/01/26/create-static-blog-by-github-and-hexo/</loc>
-    <lastmod>2016-01-27T03:39:43.119Z</lastmod>
+    <lastmod>2016-01-27T03:58:58.900Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/01/27/hello-world/</loc>
+    <lastmod>2016-01-27T03:57:28.120Z</lastmod>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/index.html</loc>
     <lastmod>2016-01-26T10:13:13.017Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/01/26/hello-world/</loc>
-    <lastmod>2016-01-26T06:56:44.581Z</lastmod>
   </url>
   
 </urlset>

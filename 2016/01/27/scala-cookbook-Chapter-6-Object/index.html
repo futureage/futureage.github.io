@@ -59,19 +59,22 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="用于记录在学习 scala cookbook过程中对于新知识或者不容易记忆的内容。结构与书的章节结构相同。
+Companion Objects and Create Object Instances主要涉及6.6 6.8 6.9小节
+scala does not have a static keyword, so if you want to create a class that has sta">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2016/01/26/hello-world/index.html">
+<meta property="og:title" content="scala cookbook notes">
+<meta property="og:url" content="http://yoursite.com/2016/01/27/scala-cookbook-Chapter-6-Object/index.html">
 <meta property="og:site_name" content="futureage's blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-01-26T06:56:44.581Z">
+<meta property="og:description" content="用于记录在学习 scala cookbook过程中对于新知识或者不容易记忆的内容。结构与书的章节结构相同。
+Companion Objects and Create Object Instances主要涉及6.6 6.8 6.9小节
+scala does not have a static keyword, so if you want to create a class that has sta">
+<meta property="og:updated_time" content="2016-01-27T10:29:38.978Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="scala cookbook notes">
+<meta name="twitter:description" content="用于记录在学习 scala cookbook过程中对于新知识或者不容易记忆的内容。结构与书的章节结构相同。
+Companion Objects and Create Object Instances主要涉及6.6 6.8 6.9小节
+scala does not have a static keyword, so if you want to create a class that has sta">
 
 
 
@@ -89,7 +92,7 @@ Quick">
   };
 </script>
 
-  <title> Hello World | futureage's blog </title>
+  <title> scala cookbook notes | futureage's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -219,7 +222,7 @@ Quick">
             
             
               
-                Hello World
+                scala cookbook notes
               
             
           </h1>
@@ -231,8 +234,8 @@ Quick">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-01-26T14:56:44+08:00" content="2016-01-26">
-              2016-01-26
+            <time itemprop="dateCreated" datetime="2016-01-27T17:53:11+08:00" content="2016-01-27">
+              2016-01-27
             </time>
           </span>
 
@@ -242,8 +245,8 @@ Quick">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/26/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/26/hello-world/" itemprop="commentsCount"></span>
+                <a href="/2016/01/27/scala-cookbook-Chapter-6-Object/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/27/scala-cookbook-Chapter-6-Object/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -264,15 +267,54 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>用于记录在学习 <a href="http://www.amazon.com/Scala-Cookbook-Object-Oriented-Functional-Programming/dp/1449339611" target="_blank" rel="external">scala cookbook</a>过程中对于新知识或者不容易记忆的内容。结构与书的章节结构相同。</p>
+<h3 id="Companion_Objects_and_Create_Object_Instances"><a href="#Companion_Objects_and_Create_Object_Instances" class="headerlink" title="Companion Objects and Create Object Instances"></a>Companion Objects and Create Object Instances</h3><p>主要涉及6.6 6.8 6.9小节</p>
+<p>scala does not have a static keyword, so if you want to create a class that has static methods, you can use companion objects.Like this: Define nonstatic (instance) members in your class, and define members that you want to appear as “static” members in an object that has the same name as the class, and is in the same file as the class.</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Pizza class</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pizza</span> (</span><span class="keyword">var</span> crustType: <span class="type">String</span>) &#123;</span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">toString</span> =</span> <span class="string">"Crust type is "</span> + crustType</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// companion object</span></span><br><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">Pizza</span> &#123;</span></span><br><span class="line">  <span class="keyword">val</span> <span class="type">CRUST_TYPE_THIN</span> = <span class="string">"thin"</span></span><br><span class="line">  <span class="keyword">val</span> <span class="type">CRUST_TYPE_THICK</span> = <span class="string">"thick"</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">getFoo</span> =</span> <span class="string">"Foo"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//how to use</span></span><br><span class="line">println(<span class="type">Pizza</span>.<span class="type">CRUST_TYPE_THIN</span>)</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> <span class="type">Pizza</span>(<span class="type">Pizza</span>.<span class="type">CRUST_TYPE_THICK</span>)</span><br><span class="line">println(p)</span><br></pre></td></tr></table></figure>
+<p>Inorder to don’t use the new keyword to create a new instance of a class, there are two ways:<br>• Create a companion object for your class, and define an apply method in the companion<br>object with the desired constructor signature.<br>• Define your class as a case class</p>
+<pre><code class="scala"><span class="comment">//companion object</span>
+<span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>{
+  <span class="keyword">var</span> name: <span class="type">String</span> = _
+}
+<span class="type">Object</span> <span class="type">Persion</span> {
+  <span class="function"><span class="keyword">def</span> <span class="title">apply</span></span>(name: <span class="type">String</span>): <span class="type">Person</span> = {
+    <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="type">Person</span>
+    p.name = name
+  }
+}
+<span class="comment">//use</span>
+<span class="keyword">val</span> dawn = <span class="type">Person</span>(<span class="string">"Dawn"</span>)
+<span class="keyword">val</span> a = <span class="type">Array</span>(<span class="type">Person</span>(<span class="string">"Dan"</span>), <span class="type">Person</span>(<span class="string">"Eli"</span>))
+
+<span class="comment">//case class</span>
+<span class="keyword">case</span> <span class="type">Person</span>(name: <span class="type">String</span>)
+<span class="keyword">val</span> john = <span class="type">Person</span>(<span class="string">"John"</span>)
+</code></pre>
+<p>note:<br>(1) apply method is a syntactic sugar, “val p = Person(“hi”)” == “val p = Person.apply(“hi”)”<br>(2) with case classes, the case class generates an apply method in a companion object default.<br>(3) you can provid multiple apply methods in companion object match multiple constructors in class</p>
+<p>Factory Method<br>you can implement the factory method with apply For instance, suppose you want to create an Animal factory that returns instances of Cat and Dog classes, based on what you ask for. By writing an apply method in the companion object of an Animal class, users of your factory can create new Cat and Dog instances like this:</p>
+<pre><code class="scala"><span class="keyword">val</span> cat = <span class="type">Animal</span>(<span class="string">"cat"</span>) <span class="comment">// creates a Cat</span>
+<span class="keyword">val</span> dog = <span class="type">Animal</span>(<span class="string">"dog"</span>) <span class="comment">// creates a Dog</span>
+</code></pre>
+<p>To implement this behavior, create a parent Animal trait:</p>
+<pre><code class="scala"><span class="class"><span class="keyword">trait</span> <span class="title">Animal</span> </span>{
+  <span class="function"><span class="keyword">def</span> <span class="title">speak</span></span>
+}
+</code></pre>
+<p>In the same file, create (a) a companion object, (b) the classes that extend the base trait, and (c) a suitable apply method:</p>
+<pre><code class="scala"><span class="class"><span class="keyword">object</span> <span class="title">Animal</span> </span>{
+  <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>{
+  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">speak</span> </span>{ println(<span class="string">"woof"</span>) }
+}
+<span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>{
+  <span class="keyword">override</span> <span class="function"><span class="keyword">def</span> <span class="title">speak</span> </span>{ println(<span class="string">"meow"</span>) }
+}
+<span class="comment">// the factory method</span>
+<span class="function"><span class="keyword">def</span> <span class="title">apply</span></span>(s: <span class="type">String</span>): <span class="type">Animal</span> = {
+  <span class="keyword">if</span> (s == <span class="string">"dog"</span>) <span class="keyword">new</span> <span class="type">Dog</span>
+  <span class="keyword">else</span> <span class="keyword">new</span> <span class="type">Cat</span>
+}
+}
+</code></pre>
 
       
     </div>
@@ -284,13 +326,13 @@ Quick">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/01/27/scala-notes/" rel="next" title="scala notes">
+                <i class="fa fa-chevron-left"></i> scala notes
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/26/create-static-blog-by-github-and-hexo/" rel="prev" title="create static blog by github and hexo">
-                create static blog by github and hexo <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -316,8 +358,8 @@ Quick">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/26/hello-world/"
-           data-title="Hello World" data-url="http://yoursite.com/2016/01/26/hello-world/">
+      <div class="ds-thread" data-thread-key="2016/01/27/scala-cookbook-Chapter-6-Object/"
+           data-title="scala cookbook notes" data-url="http://yoursite.com/2016/01/27/scala-cookbook-Chapter-6-Object/">
       </div>
     
   </div>
@@ -362,7 +404,7 @@ Quick">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -415,7 +457,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick_Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create_a_new_post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run_server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate_static_files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy_to_remote_sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Companion_Objects_and_Create_Object_Instances"><span class="nav-number">1.</span> <span class="nav-text">Companion Objects and Create Object Instances</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

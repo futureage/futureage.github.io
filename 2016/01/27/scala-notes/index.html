@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="昨天突然觉得应该认真对待如何记录或管理自己的知识，原来也就是利用evernote将看到的值得记录的东西copy下来，等下次再需要时就先去翻evernote，如果找不到，再去google等，但evernote似乎并不太适合写代码等，其格式对于阅读形成了一定的障碍，因此，为了更好的管理自己的知识，特意从网上寻找更好的工具，很自然得看到一些介绍利用github pages和hexo建立静态blog的方式">
+<meta name="description" content="用于记录在学习使用scala过程中遇到的一些小的知识点。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="create static blog by github and hexo">
-<meta property="og:url" content="http://yoursite.com/2016/01/26/create-static-blog-by-github-and-hexo/index.html">
+<meta property="og:title" content="scala notes">
+<meta property="og:url" content="http://yoursite.com/2016/01/27/scala-notes/index.html">
 <meta property="og:site_name" content="futureage's blog">
-<meta property="og:description" content="昨天突然觉得应该认真对待如何记录或管理自己的知识，原来也就是利用evernote将看到的值得记录的东西copy下来，等下次再需要时就先去翻evernote，如果找不到，再去google等，但evernote似乎并不太适合写代码等，其格式对于阅读形成了一定的障碍，因此，为了更好的管理自己的知识，特意从网上寻找更好的工具，很自然得看到一些介绍利用github pages和hexo建立静态blog的方式">
-<meta property="og:updated_time" content="2016-01-27T03:58:58.900Z">
+<meta property="og:description" content="用于记录在学习使用scala过程中遇到的一些小的知识点。">
+<meta property="og:updated_time" content="2016-01-27T09:52:26.821Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="create static blog by github and hexo">
-<meta name="twitter:description" content="昨天突然觉得应该认真对待如何记录或管理自己的知识，原来也就是利用evernote将看到的值得记录的东西copy下来，等下次再需要时就先去翻evernote，如果找不到，再去google等，但evernote似乎并不太适合写代码等，其格式对于阅读形成了一定的障碍，因此，为了更好的管理自己的知识，特意从网上寻找更好的工具，很自然得看到一些介绍利用github pages和hexo建立静态blog的方式">
+<meta name="twitter:title" content="scala notes">
+<meta name="twitter:description" content="用于记录在学习使用scala过程中遇到的一些小的知识点。">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title> create static blog by github and hexo | futureage's blog </title>
+  <title> scala notes | futureage's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -216,7 +216,7 @@
             
             
               
-                create static blog by github and hexo
+                scala notes
               
             
           </h1>
@@ -228,38 +228,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-01-26T15:58:29+08:00" content="2016-01-26">
-              2016-01-26
+            <time itemprop="dateCreated" datetime="2016-01-27T12:06:20+08:00" content="2016-01-27">
+              2016-01-27
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/other/" itemprop="url" rel="index">
-                    <span itemprop="name">other</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/26/create-static-blog-by-github-and-hexo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/26/create-static-blog-by-github-and-hexo/" itemprop="commentsCount"></span>
+                <a href="/2016/01/27/scala-notes/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/27/scala-notes/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -280,30 +261,7 @@
       
 
       
-        <p>昨天突然觉得应该认真对待如何记录或管理自己的知识，原来也就是利用evernote将看到的值得记录的东西copy下来，等下次再需要时就先去翻evernote，如果找不到，再去google等，但evernote似乎并不太适合写代码等，其格式对于阅读形成了一定的障碍，因此，为了更好的管理自己的知识，特意从网上寻找更好的工具，很自然得看到一些介绍利用github pages和hexo建立静态blog的方式，感觉可以一试。<br>由于对前端知识的极度匮乏，从昨天一直折腾到现在才基本搞明白github pages、hexo及hexo中的如主题等相关概念，现在简单记录一下如何做的，算是一个开端。</p>
-<p>github pages 是github提供的可以以页面而非git常规的src等形式展示的一项功能，可以用于静态网站建站。<br>hexo是一种比较方便的建立网站的工具。<br>markdown是一种常用的简单易用的网页编辑器，比html要简单一些。<br>下面的内容也基本来自于网络，对各位前辈表示感谢。</p>
-<p>大致步骤为(以window为例，linux或mac类似)：</p>
-<ol>
-<li>注册github账号 username</li>
-<li>创建repository，username.github.io</li>
-<li>安装github desktop</li>
-<li>安装nodejs</li>
-<li>安装hexo并初始化一个示例网站 (此部分可参考<a href="http://wsgzao.github.io/post/hexo-guide/" target="_blank" rel="external">此文</a>)</li>
-<li>将hexo创建的网站内容部署到gitHub上</li>
-<li>下载配置特定themes</li>
-<li>下载安装合适的网页编辑器如markdown</li>
-<li>书写自己的blog并发布</li>
-<li>访问username.github.io查看内容</li>
-<li>（如果需要）购买域名和DNS，将github pages主页关联到自己的域名。</li>
-</ol>
-<p>当然，这只是一个开始，还有很多内容需要增加，如添加评论、设置文章分组，学习更多的markdown语法等。</p>
-<p>参考：</p>
-<ol>
-<li><a href="http://www.jianshu.com/p/05289a4bc8b2" target="_blank" rel="external">http://www.jianshu.com/p/05289a4bc8b2</a></li>
-<li><a href="http://wsgzao.github.io/post/hexo-guide" target="_blank" rel="external">http://wsgzao.github.io/post/hexo-guide</a></li>
-<li><a href="http://zipperary.com/2013/05/28/hexo-guide-2" target="_blank" rel="external">http://zipperary.com/2013/05/28/hexo-guide-2</a></li>
-<li>参加评论可参考（利用next主题）<a href="https://github.com/iissnan/hexo-theme-next/wiki/%E8%AE%BE%E7%BD%AE%E5%A4%9A%E8%AF%B4-DISQUS" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next/wiki/%E8%AE%BE%E7%BD%AE%E5%A4%9A%E8%AF%B4-DISQUS</a></li>
-</ol>
+        <p>用于记录在学习使用scala过程中遇到的一些小的知识点。</p>
 
       
     </div>
@@ -315,12 +273,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/01/27/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/27/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2016/01/27/scala-cookbook-Chapter-6-Object/" rel="prev" title="scala cookbook notes">
+                scala cookbook notes <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -347,8 +309,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/26/create-static-blog-by-github-and-hexo/"
-           data-title="create static blog by github and hexo" data-url="http://yoursite.com/2016/01/26/create-static-blog-by-github-and-hexo/">
+      <div class="ds-thread" data-thread-key="2016/01/27/scala-notes/"
+           data-title="scala notes" data-url="http://yoursite.com/2016/01/27/scala-notes/">
       </div>
     
   </div>
