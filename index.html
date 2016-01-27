@@ -75,7 +75,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"always"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -144,6 +144,16 @@
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
             首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分類
           </a>
         </li>
       
@@ -243,6 +253,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/other/" itemprop="url" rel="index">
+                    <span itemprop="name">other</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -282,11 +311,11 @@
 <li>安装nodejs</li>
 <li>安装hexo并初始化一个示例网站 (此部分可参考<a href="http://wsgzao.github.io/post/hexo-guide/" target="_blank" rel="external">http://wsgzao.github.io/post/hexo-guide/</a>)</li>
 <li>将hexo创建的网站内容部署到gitHub上</li>
-<li>（如果需要）购买域名和DNS，将github pages主页关联到自己的域名。</li>
 <li>下载配置特定themes</li>
 <li>下载安装合适的网页编辑器如markdown</li>
 <li>书写自己的blog并发布</li>
 <li>访问username.github.io查看内容</li>
+<li>（如果需要）购买域名和DNS，将github pages主页关联到自己的域名。</li>
 </ol>
 <p>当然，这只是一个开始，还有很多内容需要增加，如添加评论、设置文章分组，学习更多的markdown语法等。</p>
 <p>参考：</p>
@@ -463,10 +492,10 @@
           </div>
 
           <div class="site-state-item site-state-categories">
-            
-              <span class="site-state-item-count">0</span>
+            <a href="/categories">
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">分類</span>
-              
+              </a>
           </div>
 
           <div class="site-state-item site-state-tags">
