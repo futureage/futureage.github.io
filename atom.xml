@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2016-01-27T10:42:09.069Z</updated>
+  <updated>2016-01-28T11:01:50.311Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[scala cookbook Chapter 9. Functional Programming]]></title>
+    <link href="http://yoursite.com/2016/01/28/scala-cookbook-Chapter-9-Functional-Programming/"/>
+    <id>http://yoursite.com/2016/01/28/scala-cookbook-Chapter-9-Functional-Programming/</id>
+    <published>2016-01-28T10:53:29.000Z</published>
+    <updated>2016-01-28T11:01:50.311Z</updated>
+    <content type="html"><![CDATA[<p>用于记录在学习 <a href="http://www.amazon.com/Scala-Cookbook-Object-Oriented-Functional-Programming/dp/1449339611" target="_blank" rel="external">scala cookbook</a>过程中对于新知识或者不容易记忆的内容。结构与书的章节结构相同。</p>
+<h3 id="simplify_anonymous_functions"><a href="#simplify_anonymous_functions" class="headerlink" title="simplify anonymous functions"></a>simplify anonymous functions</h3><p>For instance, beginning with the most explicit form, you can print each element in the list using this anonymous function with the foreach method:<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.foreach ((i: <span class="type">Int</span>) =&gt; println(i ))</span><br></pre></td></tr></table></figure></p>
+<p>As before, the Int declaration isn’t required:<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.foreach ((i) =&gt; println( i))</span><br></pre></td></tr></table></figure></p>
+<p>Because there is only one argument, the parentheses around the i parameter aren’t needed:<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.foreach (i =&gt; println(i ))</span><br></pre></td></tr></table></figure></p>
+<p>Because i is used only once in the body of the function, the expression can be further simplified with the _ wildcard:<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.foreach (println( _))</span><br></pre></td></tr></table></figure></p>
+<p>Finally, if a function literal consists of one statement that takes a single argument, you need not explicitly name and specify the argument, so the statement can finally be<br>reduced to this:<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.foreach (println)</span><br></pre></td></tr></table></figure></p>
+<h3 id="declare_function_literal"><a href="#declare_function_literal" class="headerlink" title="declare function literal"></a>declare function literal</h3><p>You can declare a function literal in at least two different ways. I generally prefer the following approach, which implicitly infers that the following function’s return type is Boolean:<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> f = (i: <span class="type">Int</span>) =&gt; &#123; i % <span class="number">2</span> == <span class="number">0</span> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>However, if you prefer to explicitly declare the return type of a function literal, or want to do so because your function is more complex, the following examples show different forms you can use to explicitly declare that your function returns a Boolean:<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> f: (<span class="type">Int</span>) =&gt; <span class="type">Boolean</span> = i =&gt; &#123; i % <span class="number">2</span> == <span class="number">0</span> &#125;</span><br><span class="line"><span class="keyword">val</span> f: <span class="type">Int</span> =&gt; <span class="type">Boolean</span> = i =&gt; &#123; i % <span class="number">2</span> == <span class="number">0</span> &#125;</span><br><span class="line"><span class="keyword">val</span> f: <span class="type">Int</span> =&gt; <span class="type">Boolean</span> = i =&gt; i % <span class="number">2</span> == <span class="number">0</span></span><br><span class="line"><span class="keyword">val</span> f: <span class="type">Int</span> =&gt; <span class="type">Boolean</span> = _ % <span class="number">2</span> == <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// implicit approach</span></span><br><span class="line"><span class="keyword">val</span> add = (x: <span class="type">Int</span>, y : <span class="type">Int</span>) =&gt; &#123; x + y &#125;</span><br><span class="line"><span class="keyword">val</span> add = (x: <span class="type">Int</span>, y : <span class="type">Int</span>) =&gt; x + y</span><br><span class="line"><span class="comment">// explicit approach</span></span><br><span class="line"><span class="keyword">val</span> add: (<span class="type">Int</span>, <span class="type">Int</span>) =&gt; <span class="type">Int</span> = ( x,y ) =&gt; &#123; x + y &#125;</span><br><span class="line"><span class="keyword">val</span> add: (<span class="type">Int</span>, <span class="type">Int</span>) =&gt; <span class="type">Int</span> = ( x,y ) =&gt; x + y</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>用于记录在学习 <a href="http://www.amazon.com/Scala-Cookbook-Object-Oriented-Functional-Programming/dp/1449339611" target="_blank" rel="external]]>
+    </summary>
+    
+      <category term="scala" scheme="http://yoursite.com/categories/scala/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[scala cookbook Chapter 6 Object]]></title>

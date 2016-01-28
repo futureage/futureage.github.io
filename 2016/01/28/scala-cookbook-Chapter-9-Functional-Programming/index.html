@@ -59,16 +59,19 @@
 
 
 
-<meta name="description" content="用于记录在学习使用scala过程中遇到的一些小的知识点。">
+<meta name="description" content="用于记录在学习 scala cookbook过程中对于新知识或者不容易记忆的内容。结构与书的章节结构相同。
+simplify anonymous functionsFor instance, beginning with the most explicit form, you can print each element in the list using this anonymous funct">
 <meta property="og:type" content="article">
-<meta property="og:title" content="scala notes">
-<meta property="og:url" content="http://yoursite.com/2016/01/27/scala-notes/index.html">
+<meta property="og:title" content="scala cookbook Chapter 9. Functional Programming">
+<meta property="og:url" content="http://yoursite.com/2016/01/28/scala-cookbook-Chapter-9-Functional-Programming/index.html">
 <meta property="og:site_name" content="futureage's blog">
-<meta property="og:description" content="用于记录在学习使用scala过程中遇到的一些小的知识点。">
-<meta property="og:updated_time" content="2016-01-27T10:42:52.097Z">
+<meta property="og:description" content="用于记录在学习 scala cookbook过程中对于新知识或者不容易记忆的内容。结构与书的章节结构相同。
+simplify anonymous functionsFor instance, beginning with the most explicit form, you can print each element in the list using this anonymous funct">
+<meta property="og:updated_time" content="2016-01-28T11:01:50.311Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="scala notes">
-<meta name="twitter:description" content="用于记录在学习使用scala过程中遇到的一些小的知识点。">
+<meta name="twitter:title" content="scala cookbook Chapter 9. Functional Programming">
+<meta name="twitter:description" content="用于记录在学习 scala cookbook过程中对于新知识或者不容易记忆的内容。结构与书的章节结构相同。
+simplify anonymous functionsFor instance, beginning with the most explicit form, you can print each element in the list using this anonymous funct">
 
 
 
@@ -86,7 +89,7 @@
   };
 </script>
 
-  <title> scala notes | futureage's blog </title>
+  <title> scala cookbook Chapter 9. Functional Programming | futureage's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -216,7 +219,7 @@
             
             
               
-                scala notes
+                scala cookbook Chapter 9. Functional Programming
               
             
           </h1>
@@ -228,8 +231,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-01-27T12:06:20+08:00" content="2016-01-27">
-              2016-01-27
+            <time itemprop="dateCreated" datetime="2016-01-28T18:53:29+08:00" content="2016-01-28">
+              2016-01-28
             </time>
           </span>
 
@@ -258,8 +261,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/27/scala-notes/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/27/scala-notes/" itemprop="commentsCount"></span>
+                <a href="/2016/01/28/scala-cookbook-Chapter-9-Functional-Programming/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/28/scala-cookbook-Chapter-9-Functional-Programming/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -280,7 +283,14 @@
       
 
       
-        <p>用于记录在学习使用scala过程中遇到的一些小的知识点。</p>
+        <p>用于记录在学习 <a href="http://www.amazon.com/Scala-Cookbook-Object-Oriented-Functional-Programming/dp/1449339611" target="_blank" rel="external">scala cookbook</a>过程中对于新知识或者不容易记忆的内容。结构与书的章节结构相同。</p>
+<h3 id="simplify_anonymous_functions"><a href="#simplify_anonymous_functions" class="headerlink" title="simplify anonymous functions"></a>simplify anonymous functions</h3><p>For instance, beginning with the most explicit form, you can print each element in the list using this anonymous function with the foreach method:<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.foreach ((i: <span class="type">Int</span>) =&gt; println(i ))</span><br></pre></td></tr></table></figure></p>
+<p>As before, the Int declaration isn’t required:<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.foreach ((i) =&gt; println( i))</span><br></pre></td></tr></table></figure></p>
+<p>Because there is only one argument, the parentheses around the i parameter aren’t needed:<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.foreach (i =&gt; println(i ))</span><br></pre></td></tr></table></figure></p>
+<p>Because i is used only once in the body of the function, the expression can be further simplified with the _ wildcard:<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.foreach (println( _))</span><br></pre></td></tr></table></figure></p>
+<p>Finally, if a function literal consists of one statement that takes a single argument, you need not explicitly name and specify the argument, so the statement can finally be<br>reduced to this:<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.foreach (println)</span><br></pre></td></tr></table></figure></p>
+<h3 id="declare_function_literal"><a href="#declare_function_literal" class="headerlink" title="declare function literal"></a>declare function literal</h3><p>You can declare a function literal in at least two different ways. I generally prefer the following approach, which implicitly infers that the following function’s return type is Boolean:<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> f = (i: <span class="type">Int</span>) =&gt; &#123; i % <span class="number">2</span> == <span class="number">0</span> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>However, if you prefer to explicitly declare the return type of a function literal, or want to do so because your function is more complex, the following examples show different forms you can use to explicitly declare that your function returns a Boolean:<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> f: (<span class="type">Int</span>) =&gt; <span class="type">Boolean</span> = i =&gt; &#123; i % <span class="number">2</span> == <span class="number">0</span> &#125;</span><br><span class="line"><span class="keyword">val</span> f: <span class="type">Int</span> =&gt; <span class="type">Boolean</span> = i =&gt; &#123; i % <span class="number">2</span> == <span class="number">0</span> &#125;</span><br><span class="line"><span class="keyword">val</span> f: <span class="type">Int</span> =&gt; <span class="type">Boolean</span> = i =&gt; i % <span class="number">2</span> == <span class="number">0</span></span><br><span class="line"><span class="keyword">val</span> f: <span class="type">Int</span> =&gt; <span class="type">Boolean</span> = _ % <span class="number">2</span> == <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// implicit approach</span></span><br><span class="line"><span class="keyword">val</span> add = (x: <span class="type">Int</span>, y : <span class="type">Int</span>) =&gt; &#123; x + y &#125;</span><br><span class="line"><span class="keyword">val</span> add = (x: <span class="type">Int</span>, y : <span class="type">Int</span>) =&gt; x + y</span><br><span class="line"><span class="comment">// explicit approach</span></span><br><span class="line"><span class="keyword">val</span> add: (<span class="type">Int</span>, <span class="type">Int</span>) =&gt; <span class="type">Int</span> = ( x,y ) =&gt; &#123; x + y &#125;</span><br><span class="line"><span class="keyword">val</span> add: (<span class="type">Int</span>, <span class="type">Int</span>) =&gt; <span class="type">Int</span> = ( x,y ) =&gt; x + y</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -292,17 +302,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/27/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/01/27/scala-cookbook-Chapter-6-Object/" rel="next" title="scala cookbook Chapter 6 Object">
+                <i class="fa fa-chevron-left"></i> scala cookbook Chapter 6 Object
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/27/scala-cookbook-Chapter-6-Object/" rel="prev" title="scala cookbook Chapter 6 Object">
-                scala cookbook Chapter 6 Object <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -328,8 +334,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/27/scala-notes/"
-           data-title="scala notes" data-url="http://yoursite.com/2016/01/27/scala-notes/">
+      <div class="ds-thread" data-thread-key="2016/01/28/scala-cookbook-Chapter-9-Functional-Programming/"
+           data-title="scala cookbook Chapter 9. Functional Programming" data-url="http://yoursite.com/2016/01/28/scala-cookbook-Chapter-9-Functional-Programming/">
       </div>
     
   </div>
@@ -427,7 +433,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#simplify_anonymous_functions"><span class="nav-number">1.</span> <span class="nav-text">simplify anonymous functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#declare_function_literal"><span class="nav-number">2.</span> <span class="nav-text">declare function literal</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
